@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金立</title>
+    <link rel="stylesheet" href="css/registor.min.css">
+</head>
+<body>
+    <div id="outer">
+        <div id="middle">
+            <div class="holder" id="innner">
+                <div class="control">
+                    <div class="bottom"></div>
+                    <div class="content">
+                        <header class="tc">
+                            <h1 class="mt30 ib"></h1>
+                            <p>
+                                <span class="ora">注册</span>
+                                <a href="login.html">登陆</a>
+                            </p>
+                        </header>
+                        <section>
+                            <form action="">
+                                <div class="bigd"><input type="text" placeholder="请输入账号" id="uname"></div>
+                                <div class="mt20 bigd"><input type="password" placeholder="请输入密码" id="upwd"></div>
+                                <div class="bigd"><input type="button" value="注册" id="sub"></div>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/public.js"></script>
+    <script>
+        $('#sub').click(function(){
+            let uname = $('#uname').val();
+            let upwd = $('#upwd').val();
+            let cookie_str = $.cookie('users') ? $.cookie('users') : '';
+            console.log(cookie_str);
+            let cookie_obj = $toObj(cookie_str);
+            if(uname in cookie_obj){
+                alert('用户已存在！');
+                return;
+            }
+            cookie_obj[uname] = upwd;
+            $.cookie('users',JSON.stringify(cookie_obj),{expires : 7,path:'/'})
+            alert('注册成功');
+        })
+    </script>
+</body>
+</html>

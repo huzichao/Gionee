@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>金立</title>
+    <link rel="stylesheet" href="css/login.min.css">
+</head>
+<body>
+    <div id="outer">
+        <div id="middle">
+            <div class="holder" id="innner">
+                <div class="control">
+                    <div class="bottom"></div>
+                    <div class="content">
+                        <header class="tc">
+                            <h1 class="mt30 ib"></h1>
+                            <p>
+                                <span class="ora">登陆</span>
+                                <a href="registor.html">注册</a>
+                            </p>
+                        </header>
+                        <section>
+                            <form action="">
+                                <div class="bigd"><input type="text" placeholder="请输入账号" id="uname"></div>
+                                <div class="mt20 bigd"><input type="password" placeholder="请输入密码" id="upwd"></div>
+                                <div class="qq30 bigd"> <a href="#" class="qq"><img src="img/qq.png" alt=""></a></div>
+                                <div class="che bigd">
+                                    <span><input type="checkbox"><b>十天内免登录</b></span>
+                                    <a href="#">忘记密码？</a>
+                                </div>
+                                <div class="log bigd">
+                                    <a href="#"><input type="button" value="立即登陆" id="sub"></a>
+                                </div>
+                                <div class="more bigd">还没有账号？<a href="#">立即注册</a></div>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/public.js"></script>
+    <script>
+     
+        $('#sub').click(function(){
+				let uname = $('#uname').val();
+				let upwd = $('#upwd').val();
+				let cookie_str = $.cookie('users') ? $.cookie('users') : '';
+				let cookie_obj = $toObj(cookie_str);
+				if(uname in cookie_obj){
+					if(upwd === cookie_obj[uname]){
+						alert('登录成功');
+						location.href = 'index.html';
+					}else{
+						alert('密码错误！');
+					}
+				}else{
+					alert('用户名不存在');
+				}
+			})
+    </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+@import "public";
+@import "pubind";
+
+.carts{
+    width: 100%;
+}
+.cart_more{
+    width: 1190px;
+    margin:0 auto;
+    min-height: 600px;
+    // background: grey;
+    margin-top: 105px;
+    padding-top: 50px;
+}
+
+.cartList {
+    width: 1190px;
+    border: 1px solid #e3e3e3;
+}
+.cartList .cart_til{
+    font-size: 16px;
+    color: #317ee7;
+    border-top:1px solid #317ee7;
+    text-indent: 54px;
+    width: 1190px;
+    height:50px;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+}
+
+.cartHead {
+    height: 50px;
+    background: #f7f7f7;
+}
+
+.cartHead li {
+    width: 180px;
+    height: 50px;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    line-height: 50px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.goodInfo {
+    border-top: none;
+    height: 50px;
+}
+
+.goodInfo li {
+    width: 180px;
+    height: 50px;
+    float: left;
+    font: 24px/50px "";
+    text-align: center;
+    line-height: 50px;
+    overflow: hidden;
+
+}
+.goodInfo .prione{
+    color:red;
+}
+
+.goodInfo .del{
+    color:black;
+    font-size:12px;
+}
+
+.goodInfo li input {
+    width: 30px;
+    text-align: center;
+    outline: none;
+    border:none;
+}
+
+.goodInfo li.num .product-num{
+    border: 1px solid #e3e3e3;
+    text-align: center;
+    display: flex;
+    width: 78px;
+    margin-left: 50px;
+    margin-top:10px;
+}
+
+
+.goodInfo li.num a {
+    width: 24px;
+    height: 28px;
+    display: block;
+    background: #f7f7f7;
+}
+.goodInfo li.num .minus span{
+    background: url(../img/minus.png) no-repeat center;
+    display: block;
+    width: 24px;
+    height: 28px;
+}
+.goodInfo li.num .plus span{
+    background: url(../img/add.png) no-repeat center;
+    display: block;
+    width: 24px;
+    height: 28px;
+}
+.goodInfo li img {
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.cartList .blank {
+    width: 1190px;
+    height: 400px;
+    text-align: center;
+    border-top: none;
+    font-size: 30px;
+    line-height: 400px;
+    display:none;
+}
+
+.cart_fot{
+    position: relative;
+    width: 1190px;
+    height: 50px;
+    background: #f7f7f7; 
+    display: block;
+}
+.cart_fot #pay{
+    height: 50px;
+    color: #fff;
+    font-size: 20px;
+    width: 110px;
+    background: #ff7700;
+    border:none;
+    position: absolute;
+    right: 0px;
+    bottom:0px;
+}
+.cart_fot .cart_s{
+    display: block;
+    color:#ff7700;
+}
+.cart_fot .ss{
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+    position: absolute;
+    bottom:15px;
+    right:120px;
+}
